@@ -1,10 +1,16 @@
 export interface Memory {
   id: number;
-  image: string;
   caption: string;
   location?: string;
   date?: string;
   note?: string;
+  hasGallery?: boolean;
+}
+
+export interface MediaItem {
+  type: 'image' | 'video';
+  src: string;
+  alt?: string;
 }
 
 export interface Chapter {

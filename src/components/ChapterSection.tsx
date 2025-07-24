@@ -131,7 +131,7 @@ const ChapterSection: React.FC<ChapterSectionProps> = ({ chapter, onUnlock }) =>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {chapter.memories.map((memory, index) => (
-            <MemoryCard key={memory.id} memory={memory} index={index} />
+            <MemoryCard key={memory.id} memory={memory} index={index} chapterId={chapter.id} />
           ))}
         </div>
       </div>

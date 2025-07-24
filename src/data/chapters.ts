@@ -11,64 +11,64 @@ export const chaptersData: Chapter[] = [
     memories: [
       {
         id: 1,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "O primeiro encontro",
         location: "Cafeteria da esquina",
         date: "15 de março",
-        note: "Você estava nervosa e mexia no cabelo... eu sabia que era especial."
+        note: "Você estava nervosa e mexia no cabelo... eu sabia que era especial.",
+        hasGallery: true
       },
       {
         id: 2,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nossa primeira caminhada",
         location: "Parque da cidade",
-        note: "Falamos por horas sem perceber o tempo passar."
+        note: "Falamos por horas sem perceber o tempo passar.",
+        hasGallery: true
       },
       {
         id: 3,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "O primeiro 'eu te amo'",
         date: "2 de junho",
-        note: "Saiu sem pensar, mas nunca foi tão verdadeiro."
+        note: "Saiu sem pensar, mas nunca foi tão verdadeiro.",
+        hasGallery: true
       },
       {
         id: 4,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nossa primeira viagem",
         location: "Praia do litoral",
-        note: "Descobrimos que somos companheiros de aventura perfeitos."
+        note: "Descobrimos que somos companheiros de aventura perfeitos.",
+        hasGallery: true
       },
       {
         id: 5,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Conhecendo sua família",
-        note: "Seus pais me adotaram desde o primeiro dia."
+        note: "Seus pais me adotaram desde o primeiro dia.",
+        hasGallery: true
       },
       {
         id: 6,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nosso primeiro Natal juntos",
         date: "25 de dezembro",
-        note: "O presente mais especial foi estar ao seu lado."
+        note: "O presente mais especial foi estar ao seu lado.",
+        hasGallery: true
       },
       {
         id: 7,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Mudando para nosso primeiro lar",
-        note: "Transformamos uma casa em nosso cantinho."
+        note: "Transformamos uma casa em nosso cantinho.",
+        hasGallery: true
       },
       {
         id: 8,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Aprendendo a cozinhar juntos",
-        note: "Mais risos do que pratos bem feitos, mas que memórias!"
+        note: "Mais risos do que pratos bem feitos, mas que memórias!",
+        hasGallery: true
       },
       {
         id: 9,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Completando nosso primeiro ano",
         date: "15 de março",
-        note: "365 dias que mudaram nossas vidas para sempre."
+        note: "365 dias que mudaram nossas vidas para sempre.",
+        hasGallery: true
       }
     ]
   },
@@ -82,60 +82,60 @@ export const chaptersData: Chapter[] = [
     memories: [
       {
         id: 10,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nossa primeira grande aventura",
         location: "Trilha na montanha",
-        note: "Descobrimos que podemos enfrentar qualquer desafio juntos."
+        note: "Descobrimos que podemos enfrentar qualquer desafio juntos.",
+        hasGallery: true
       },
       {
         id: 11,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Aprendendo coisas novas",
-        note: "Você me ensinou a dançar, eu te ensinei a jogar videogame."
+        note: "Você me ensinou a dançar, eu te ensinei a jogar videogame.",
+        hasGallery: true
       },
       {
         id: 12,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Superando nosso primeiro desafio",
-        note: "Saímos mais fortes e unidos do que nunca."
+        note: "Saímos mais fortes e unidos do que nunca.",
+        hasGallery: true
       },
       {
         id: 13,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Construindo tradições",
-        note: "Nossa pizza de domingo virou sagrada."
+        note: "Nossa pizza de domingo virou sagrada.",
+        hasGallery: true
       },
       {
         id: 14,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Explorando novos lugares",
         location: "Cidade histórica",
-        note: "Cada viagem era uma nova descoberta sobre nós."
+        note: "Cada viagem era uma nova descoberta sobre nós.",
+        hasGallery: true
       },
       {
         id: 15,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nossos amigos",
-        note: "Quando percebemos que tínhamos construído uma família escolhida."
+        note: "Quando percebemos que tínhamos construído uma família escolhida.",
+        hasGallery: true
       },
       {
         id: 16,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Sonhando com o futuro",
-        note: "As primeiras conversas sobre nossos planos juntos."
+        note: "As primeiras conversas sobre nossos planos juntos.",
+        hasGallery: true
       },
       {
         id: 17,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Crescendo juntos",
-        note: "Apoiando os sonhos um do outro incondicionalmente."
+        note: "Apoiando os sonhos um do outro incondicionalmente.",
+        hasGallery: true
       },
       {
         id: 18,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Segundo aniversário",
         date: "15 de março",
-        note: "Dois anos que pareceram uma vida inteira de felicidade."
+        note: "Dois anos que pareceram uma vida inteira de felicidade.",
+        hasGallery: true
       }
     ]
   },
@@ -149,58 +149,58 @@ export const chaptersData: Chapter[] = [
     memories: [
       {
         id: 19,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Momentos de quietude",
-        note: "Aprendemos que o silêncio junto também é lindo."
+        note: "Aprendemos que o silêncio junto também é lindo.",
+        hasGallery: true
       },
       {
         id: 20,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Cuidando um do outro",
-        note: "Nas doenças, nas alegrias, sempre presente."
+        note: "Nas doenças, nas alegrias, sempre presente.",
+        hasGallery: true
       },
       {
         id: 21,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Conquistando sonhos",
-        note: "Celebrando cada vitória como se fosse nossa."
+        note: "Celebrando cada vitória como se fosse nossa.",
+        hasGallery: true
       },
       {
         id: 22,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Nosso lar perfeito",
-        note: "Cada cantinho da casa tem nossa história."
+        note: "Cada cantinho da casa tem nossa história.",
+        hasGallery: true
       },
       {
         id: 23,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Rituais do dia a dia",
-        note: "O café da manhã junto virou nosso momento sagrado."
+        note: "O café da manhã junto virou nosso momento sagrado.",
+        hasGallery: true
       },
       {
         id: 24,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Amadurecendo juntos",
-        note: "Crescemos como pessoas e como casal."
+        note: "Crescemos como pessoas e como casal.",
+        hasGallery: true
       },
       {
         id: 25,
-        image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Planejando o futuro",
-        note: "Quando 'para sempre' deixou de ser um sonho e virou certeza."
+        note: "Quando 'para sempre' deixou de ser um sonho e virou certeza.",
+        hasGallery: true
       },
       {
         id: 26,
-        image: "https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Amor incondicional",
-        note: "Descobrimos que amar é escolher, todos os dias."
+        note: "Descobrimos que amar é escolher, todos os dias.",
+        hasGallery: true
       },
       {
         id: 27,
-        image: "https://images.pexels.com/photos/1157394/pexels-photo-1157394.jpeg?auto=compress&cs=tinysrgb&w=800",
         caption: "Terceiro aniversário",
         date: "15 de março",
-        note: "Três anos de certeza: somos feitos um para o outro."
+        note: "Três anos de certeza: somos feitos um para o outro.",
+        hasGallery: true
       }
     ]
   },
