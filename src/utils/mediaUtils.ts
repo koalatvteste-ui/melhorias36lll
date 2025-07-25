@@ -1,9 +1,10 @@
 import { MediaItem } from '../types';
+import { mainImages, galleryCounts, videoFiles, getMediaKey, hasGalleryContent as hasGalleryFromManifest } from '../data/mediaManifest';
 
 // Função para obter a imagem principal de uma memória
-export const getMainImage = (chapterId: number, memoryIndex: number): string => {
-  const memoryNumber = String(memoryIndex + 1).padStart(2, '0');
-  return `/public/capitulo${chapterId}/principal/memoria${memoryNumber}.jpg`;
+export const getMainImage = (chapterId: number, memoryId: number): string => {
+  const key = getMediaKey(chapterId, memoryId);
+  return mainImages[key] || getFallbackImage();
 };
 
 // Função para obter imagem de fallback caso a principal não exista
@@ -11,68 +12,55 @@ export const getFallbackImage = (): string => {
   return "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800";
 };
 
-// Função para detectar arquivos de galeria de uma memória específica
-export const getGalleryItems = async (chapterId: number, memoryIndex: number): Promise<MediaItem[]> => {
-  const memoryNumber = String(memoryIndex + 1).padStart(2, '0');
+// Função para obter itens de galeria baseado no manifesto
+export const getGalleryItems = async (chapterId: number, memoryId: number): Promise<MediaItem[]> => {
+  const key = getMediaKey(chapterId, memoryId);
   const basePath = `/public/capitulo${chapterId}/galeria/`;
+  const memoryNumber = String(memoryId).padStart(2, '0');
   const items: MediaItem[] = [];
 
-  // Lista de possíveis extensões de imagem e vídeo
-  const imageExtensions = ['jpg', 'jpeg', 'png', 'webp'];
-  const videoExtensions = ['mp4', 'webm', 'mov'];
+  // Obter contagem de imagens do manifesto
+  const galleryCount = galleryCounts[key] || 0;
 
-  // Função para verificar se um arquivo existe
-  const checkFileExists = async (url: string): Promise<boolean> => {
-    try {
-      const response = await fetch(url, { method: 'HEAD' });
-      return response.ok;
-    } catch {
-      return false;
-    }
-  };
-
-  // Verificar imagens da galeria (memoria01_01.jpg, memoria01_02.jpg, etc.)
-  for (let i = 1; i <= 10; i++) { // Máximo de 10 itens por galeria
+  // Adicionar imagens da galeria
+  for (let i = 1; i <= galleryCount; i++) {
     const itemNumber = String(i).padStart(2, '0');
-    
-    for (const ext of imageExtensions) {
-      const imagePath = `${basePath}memoria${memoryNumber}_${itemNumber}.${ext}`;
-      if (await checkFileExists(imagePath)) {
-        items.push({
-          type: 'image',
-          src: imagePath,
-          alt: `Galeria ${i}`
-        });
-        break; // Para na primeira extensão encontrada
-      }
-    }
+    const imagePath = `${basePath}memoria${memoryNumber}_${itemNumber}.jpg`;
+    items.push({
+      type: 'image',
+      src: imagePath,
+      alt: `Galeria ${i}`
+    });
   }
 
-  // Verificar vídeos (memoria01_video.mp4, memoria01_video_01.mp4, etc.)
-  for (let i = 0; i <= 5; i++) { // Máximo de 5 vídeos por memória
-    const videoSuffix = i === 0 ? 'video' : `video_${String(i).padStart(2, '0')}`;
-    
-    for (const ext of videoExtensions) {
-      const videoPath = `${basePath}memoria${memoryNumber}_${videoSuffix}.${ext}`;
-      if (await checkFileExists(videoPath)) {
-        items.push({
-          type: 'video',
-          src: videoPath,
-          alt: `Vídeo ${i + 1}`
-        });
-        break; // Para na primeira extensão encontrada
-      }
-    }
-  }
+  // Adicionar vídeos do manifesto
+  const videos = videoFiles[key] || [];
+  videos.forEach((videoFile, index) => {
+    items.push({
+      type: 'video',
+      src: `${basePath}${videoFile}`,
+      alt: `Vídeo ${index + 1}`
+    });
+  });
 
   return items;
 };
 
-// Função para verificar se uma memória tem galeria
-export const hasGalleryContent = async (chapterId: number, memoryIndex: number): Promise<boolean> => {
-  const galleryItems = await getGalleryItems(chapterId, memoryIndex);
-  return galleryItems.length > 0;
+// Função para verificar se uma memória tem galeria (usando manifesto)
+export const hasGalleryContent = async (chapterId: number, memoryId: number): Promise<boolean> => {
+  return hasGalleryFromManifest(chapterId, memoryId);
 };
+
+// Função auxiliar para verificar se um arquivo existe (mantida para compatibilidade)
+export const checkFileExists = async (url: string): Promise<boolean> => {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    return response.ok;
+  } catch {
+    return false;
+  }
+};
+
 
 // Função para obter formato de arquivo
 export const getFileExtension = (filename: string): string => {

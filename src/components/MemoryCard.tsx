@@ -1,36 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Calendar, Heart, Camera, Play } from 'lucide-react';
 import { Memory, MediaItem } from '../types';
-import { getMainImage, getFallbackImage, getGalleryItems } from '../utils/mediaUtils';
+import { getMainImage, getFallbackImage, getGalleryItems, hasGalleryContent } from '../utils/mediaUtils';
+import { getTotalMediaCount } from '../data/mediaManifest';
 import MediaModal from './MediaModal';
 
 interface MemoryCardProps {
   memory: Memory;
-  index: number;
   chapterId: number;
 }
 
-const MemoryCard: React.FC<MemoryCardProps> = ({ memory, index, chapterId }) => {
+const MemoryCard: React.FC<MemoryCardProps> = ({ memory, chapterId }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [galleryItems, setGalleryItems] = useState<MediaItem[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasGallery, setHasGallery] = useState(false);
+  const [totalMediaCount, setTotalMediaCount] = useState(0);
 
-  const mainImageSrc = imageError ? getFallbackImage() : getMainImage(chapterId, index);
+  const mainImageSrc = imageError ? getFallbackImage() : getMainImage(chapterId, memory.id);
 
   // Carregar itens da galeria
   useEffect(() => {
     const loadGalleryItems = async () => {
-      if (memory.hasGallery) {
-        const items = await getGalleryItems(chapterId, index);
+      const hasContent = await hasGalleryContent(chapterId, memory.id);
+      setHasGallery(hasContent);
+      
+      if (hasContent) {
+        const items = await getGalleryItems(chapterId, memory.id);
         setGalleryItems(items);
-        setHasGallery(items.length > 0);
+        setTotalMediaCount(getTotalMediaCount(chapterId, memory.id));
       }
     };
 
     loadGalleryItems();
-  }, [chapterId, index, memory.hasGallery]);
+  }, [chapterId, memory.id]);
 
   const handleImageError = () => {
     setImageError(true);
@@ -49,7 +53,7 @@ const MemoryCard: React.FC<MemoryCardProps> = ({ memory, index, chapterId }) => 
         className={`animate-fade-in bg-white rounded-2xl shadow-lg overflow-hidden border border-warm-gray/20 hover:shadow-xl transition-all duration-300 ${
           hasGallery ? 'cursor-pointer' : ''
         }`}
-        style={{ animationDelay: `${index * 0.1}s` }}
+        style={{ animationDelay: `${(memory.id - 1) * 0.1}s` }}
         onClick={handleCardClick}
       >
         <div className="relative overflow-hidden">
@@ -77,9 +81,9 @@ const MemoryCard: React.FC<MemoryCardProps> = ({ memory, index, chapterId }) => 
           </div>
           
           {/* Indicador de quantidade de itens */}
-          {hasGallery && galleryItems.length > 0 && (
+          {hasGallery && totalMediaCount > 0 && (
             <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded-full font-cormorant">
-              +{galleryItems.length}
+              +{totalMediaCount}
             </div>
           )}
         </div>
