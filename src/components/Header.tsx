@@ -3,8 +3,8 @@ import { Heart, Clock } from 'lucide-react';
 import { useCountdown } from '../hooks/useCountdown';
 
 const Header: React.FC = () => {
-  // Data do próximo aniversário (4 anos) - ajuste conforme necessário
-  const [days, hours, minutes, seconds] = useCountdown('2025-03-15T00:00:00');
+  // Data de início do relacionamento - 25/07/2022
+  const [days, hours, minutes, seconds] = useCountdown('2022-07-25T00:00:00');
 
   return (
     <header className="text-center py-12 px-6 bg-gradient-to-b from-cream to-soft-gray">
@@ -23,11 +23,11 @@ const Header: React.FC = () => {
         </p>
         
         {/* Contador Regressivo */}
-        <div className="mb-8 p-6 bg-white/70 rounded-2xl border border-warm-gray/30 max-w-lg mx-auto">
+        <div className="mb-8 p-6 bg-white/70 rounded-2xl border border-warm-gray/30 max-w-xl mx-auto">
           <div className="flex items-center justify-center mb-4">
             <Clock className="text-gold mr-2" size={20} />
-            <p className="font-dancing text-xl text-charcoal">
-              Contagem para nosso 4º aniversário
+            <p className="font-dancing text-xl text-charcoal text-center">
+              Tempo juntos desde 25 de julho de 2022
             </p>
           </div>
           
@@ -69,8 +69,8 @@ const Header: React.FC = () => {
             </div>
           </div>
           
-          <p className="font-cormorant text-sm text-medium-gray/70 mt-4">
-            Cada segundo nos aproxima de mais um ano de amor ❤️
+          <p className="font-cormorant text-sm text-medium-gray/70 mt-4 text-center">
+            Cada segundo é mais uma prova do nosso amor ❤️
           </p>
         </div>
         
