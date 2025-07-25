@@ -1,7 +1,11 @@
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, Clock } from 'lucide-react';
+import { useCountdown } from '../hooks/useCountdown';
 
 const Header: React.FC = () => {
+  // Data do próximo aniversário (4 anos) - ajuste conforme necessário
+  const [days, hours, minutes, seconds] = useCountdown('2025-03-15T00:00:00');
+
   return (
     <header className="text-center py-12 px-6 bg-gradient-to-b from-cream to-soft-gray">
       <div className="max-w-4xl mx-auto">
@@ -17,6 +21,58 @@ const Header: React.FC = () => {
           Uma jornada através do tempo, revelando os momentos mais preciosos da nossa história. 
           Cada capítulo desbloqueado é uma nova descoberta, um novo motivo para sorrir.
         </p>
+        
+        {/* Contador Regressivo */}
+        <div className="mb-8 p-6 bg-white/70 rounded-2xl border border-warm-gray/30 max-w-lg mx-auto">
+          <div className="flex items-center justify-center mb-4">
+            <Clock className="text-gold mr-2" size={20} />
+            <p className="font-dancing text-xl text-charcoal">
+              Contagem para nosso 4º aniversário
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-4 gap-4 text-center">
+            <div className="bg-gradient-to-b from-rose-gold/20 to-rose-gold/10 rounded-lg p-3">
+              <div className="font-dancing text-2xl md:text-3xl text-charcoal font-bold">
+                {days}
+              </div>
+              <div className="font-cormorant text-xs text-medium-gray uppercase tracking-wide">
+                Dias
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-b from-gold/20 to-gold/10 rounded-lg p-3">
+              <div className="font-dancing text-2xl md:text-3xl text-charcoal font-bold">
+                {hours}
+              </div>
+              <div className="font-cormorant text-xs text-medium-gray uppercase tracking-wide">
+                Horas
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-b from-rose-gold/20 to-rose-gold/10 rounded-lg p-3">
+              <div className="font-dancing text-2xl md:text-3xl text-charcoal font-bold">
+                {minutes}
+              </div>
+              <div className="font-cormorant text-xs text-medium-gray uppercase tracking-wide">
+                Minutos
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-b from-gold/20 to-gold/10 rounded-lg p-3">
+              <div className="font-dancing text-2xl md:text-3xl text-charcoal font-bold">
+                {seconds}
+              </div>
+              <div className="font-cormorant text-xs text-medium-gray uppercase tracking-wide">
+                Segundos
+              </div>
+            </div>
+          </div>
+          
+          <p className="font-cormorant text-sm text-medium-gray/70 mt-4">
+            Cada segundo nos aproxima de mais um ano de amor ❤️
+          </p>
+        </div>
         
         <div className="mt-8 p-4 bg-white/50 rounded-lg border border-warm-gray/30">
           <p className="font-cormorant text-sm text-medium-gray">
