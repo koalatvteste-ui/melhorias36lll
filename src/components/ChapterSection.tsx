@@ -1,7 +1,8 @@
 import React from 'react';
-import { Lock, Unlock } from 'lucide-react';
+import { Lock, Unlock, Key, AlertCircle } from 'lucide-react';
 import { Chapter } from '../types';
 import MemoryCard from './MemoryCard';
+import SecretInput from './SecretInput';
 
 interface ChapterSectionProps {
   chapter: Chapter;
@@ -41,17 +42,25 @@ const ChapterSection: React.FC<ChapterSectionProps> = ({ chapter, onUnlock }) =>
             <p className="font-cormorant text-lg text-medium-gray/70 mb-8">
               {chapter.subtitle}
             </p>
-            <p className="font-cormorant text-medium-gray/60 mb-8 max-w-md mx-auto">
-              Encontre o próximo QR code para desbloquear este capítulo especial da nossa história.
-            </p>
             
-            {/* Simulação de desbloqueio para demonstração */}
-            <button
-              onClick={() => onUnlock(chapter.id)}
-              className="bg-gold/20 hover:bg-gold/30 text-gold px-8 py-3 rounded-full font-cormorant font-medium transition-all duration-300 hover:scale-105"
-            >
-              Simular QR Code Encontrado
-            </button>
+            <div className="bg-gradient-to-br from-gold/10 to-rose-gold/10 rounded-2xl p-8 mb-8 border border-gold/20">
+              <div className="flex items-center justify-center mb-4">
+                <Key className="text-gold mr-2" size={20} />
+                <p className="font-dancing text-xl text-charcoal">
+                  Dica para encontrar o QR Code
+                </p>
+              </div>
+              <div className="bg-white/60 rounded-lg p-4 border-l-4 border-gold">
+                <p className="font-cormorant text-medium-gray italic text-center">
+                  {/* A dica será passada pelo componente pai */}
+                </p>
+              </div>
+            </div>
+            
+            <SecretInput 
+              chapterId={chapter.id}
+              onUnlock={onUnlock}
+            />
           </div>
         </div>
       </section>
