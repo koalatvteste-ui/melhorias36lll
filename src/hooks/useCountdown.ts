@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 
-export const useDaysLived = (startDate: string = "2022-07-25") => {
-  const startDateTime = new Date(startDate).getTime();
-  const [timeLived, setTimeLived] = useState(
-    new Date().getTime() - startDateTime
+export const useCountdown = (targetDate: string) => {
+  const countDownDate = new Date(targetDate).getTime();
+
+  const [countDown, setCountDown] = useState(
+    countDownDate - new Date().getTime()
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLived(new Date().getTime() - startDateTime);
+      setCountDown(countDownDate - new Date().getTime());
     }, 1000);
-    
+
     return () => clearInterval(interval);
-  }, [startDateTime]);
+  }, [countDownDate]);
 
-  const days = Math.floor(timeLived / (1000 * 60 * 60 * 24));
+  const days = Math.floor(countDown / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (timeLived % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor((timeLived % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLived % (1000 * 60)) / 1000);
+  const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
 
-  return { days, hours, minutes, seconds, totalDays: days };
+  return [days, hours, minutes, seconds];
 };
