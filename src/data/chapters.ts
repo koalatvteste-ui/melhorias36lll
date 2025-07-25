@@ -17,6 +17,11 @@ export const chaptersData: Chapter[] = [
         date: "12 de junho",
         note: "E foi no Valle que Você estava alegrinha e falou uma simples frase, 'Eu gosto de você'. E era dia dos namorados",
         hasGallery: true,
+        link: {
+          url: "https://maps.google.com/?q=Salles+Jardins+Valle",
+          text: "Ver no Maps",
+          type: "maps"
+        },
       },
       {
         id: 2,
@@ -25,6 +30,11 @@ export const chaptersData: Chapter[] = [
         date: "31 de abril",
         note: "Falamos por horas sem perceber o tempo passar.",
         hasGallery: true,
+        link: {
+          url: "https://maps.google.com/?q=Parque+da+cidade",
+          text: "Nosso cantinho especial",
+          type: "maps"
+        },
       },
       {
         id: 3,
@@ -33,6 +43,11 @@ export const chaptersData: Chapter[] = [
         date: "agum dia de julho",
         note: "Saiu sem pensar, mas nunca foi tão verdadeiro.",
         hasGallery: true,
+        link: {
+          url: "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd",
+          text: "Nossa playlist",
+          type: "music"
+        },
       },
       {
         id: 4,
@@ -41,6 +56,11 @@ export const chaptersData: Chapter[] = [
         date: "25 de setembro",
         note: "Descobrimos que somos companheiros de aventura perfeitos.",
         hasGallery: true,
+        link: {
+          url: "https://www.instagram.com/explore/tags/primeiraviagem/",
+          text: "Reviver momentos",
+          type: "social"
+        },
       },
       {
         id: 5,
@@ -48,6 +68,11 @@ export const chaptersData: Chapter[] = [
         date: "25 de outubro",
         note: "Seus pais me adotaram desde o primeiro dia.",
         hasGallery: true,
+        link: {
+          url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          text: "Nossa música",
+          type: "music"
+        },
       },
       {
         id: 6,

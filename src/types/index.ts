@@ -5,6 +5,11 @@ export interface Memory {
   date?: string;
   note?: string;
   hasGallery?: boolean;
+  link?: {
+    url: string;
+    text: string;
+    type: 'external' | 'maps' | 'social' | 'music';
+  };
 }
 
 export interface MediaItem {
