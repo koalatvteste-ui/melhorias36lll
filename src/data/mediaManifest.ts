@@ -34,6 +34,28 @@ export const mainImages: { [key: string]: string } = {
   "3-25": "/capitulo3/principal/memoria25.jpg",
   "3-26": "/capitulo3/principal/memoria26.jpg",
   "3-27": "/capitulo3/principal/memoria27.jpg",
+
+  // Capítulo 4 - adicione conforme necessário
+  "4-19": "/capitulo3/principal/memoria19.jpg",
+  "4-20": "/capitulo3/principal/memoria20.jpg",
+  "4-21": "/capitulo3/principal/memoria21.jpg",
+  "4-22": "/capitulo3/principal/memoria22.jpg",
+  "4-23": "/capitulo3/principal/memoria23.jpg",
+  "4-24": "/capitulo3/principal/memoria24.jpg",
+  "4-25": "/capitulo3/principal/memoria25.jpg",
+  "4-26": "/capitulo3/principal/memoria26.jpg",
+  "4-27": "/capitulo3/principal/memoria27.jpg",
+
+  // Capítulo 5 - adicione conforme necessário
+  "5-19": "/capitulo3/principal/memoria19.jpg",
+  "5-20": "/capitulo3/principal/memoria20.jpg",
+  "5-21": "/capitulo3/principal/memoria21.jpg",
+  "5-22": "/capitulo3/principal/memoria22.jpg",
+  "5-23": "/capitulo3/principal/memoria23.jpg",
+  "5-24": "/capitulo3/principal/memoria24.jpg",
+  "5-25": "/capitulo3/principal/memoria25.jpg",
+  "5-26": "/capitulo3/principal/memoria26.jpg",
+  "5-27": "/capitulo3/principal/memoria27.jpg",
 };
 
 export const galleryCounts: { [key: string]: number } = {
