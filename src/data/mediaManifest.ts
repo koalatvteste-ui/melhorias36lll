@@ -66,12 +66,12 @@ export const galleryCounts: { [key: string]: number } = {
   "1-1": 5, // memória 1 do capítulo 1 tem 5 fotos
   "1-2": 8, // memória 2 do capítulo 1 tem 8 fotos
   "1-3": 3, // memória 3 do capítulo 1 tem 3 fotos
-  "1-4": 0, // memória 4 do capítulo 1 não tem galeria
-  "1-5": 0, // memória 5 do capítulo 1 não tem galeria
-  "1-6": 0, // memória 6 do capítulo 1 não tem galeria
-  "1-7": 0, // memória 7 do capítulo 1 não tem galeria
-  "1-8": 0, // memória 8 do capítulo 1 não tem galeria
-  "1-9": 0, // memória 9 do capítulo 1 não tem galeria
+  "1-4": 2, // memória 4 do capítulo 1 não tem galeria
+  "1-5": 1, // memória 5 do capítulo 1 não tem galeria
+  "1-6": 3, // memória 6 do capítulo 1 não tem galeria
+  "1-7": 4, // memória 7 do capítulo 1 não tem galeria
+  "1-8": 1, // memória 8 do capítulo 1 não tem galeria
+  "1-9": 1, // memória 9 do capítulo 1 não tem galeria
   
   // Capítulo 2 - adicione conforme necessário
   "2-10": 0,
